@@ -1,2 +1,2 @@
 # django-db-migrator
-Migrating data from another database to Django application
+Migrating data from another database to Django application.
