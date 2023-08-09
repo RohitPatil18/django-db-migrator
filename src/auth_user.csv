@@ -1,0 +1,2 @@
+id,password,last_login,is_superuser,username,first_name,last_name,email,is_staff,is_active,date_joined
+1,pbkdf2_sha256$600000$qojvaxh1gjZUHtFt6SN5kY$SoKzoHEapaS4sZZ7P5aQgIryReHjZaTkK8gPXTEpHgI=,,True,rohit,,,test@email.com,True,True,2023-07-14 07:33:23.252091+00:00
