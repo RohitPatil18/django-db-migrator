@@ -1,6 +1,12 @@
 import csv
+import os
 
+from django.conf import settings
 from django.db import connections
+
+DATASET = {}
+
+BACKUP_DIR = os.path.join(settings.BASE_DIR, "backups")
 
 
 class DatabaseExportService:
@@ -18,7 +24,8 @@ class DatabaseExportService:
 
     def save_to_csv(self, data, columns):
         filename = f"{self.tablename}.csv"
-        with open(filename, "w", newline="") as csvfile:
+        filepath = os.path.join(BACKUP_DIR, filename)
+        with open(filepath, "w", newline="") as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(columns)  # Write column names
             writer.writerows(data)

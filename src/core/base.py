@@ -4,10 +4,9 @@ import pandas as pd
 import numpy as np
 
 from . import fields
-from .services import DatabaseExportService
+from .services import DatabaseExportService, BACKUP_DIR
 
 DATASET = {}
-
 
 class DatabaseExportModel:
     sourcetable = None
@@ -81,10 +80,7 @@ class BaseModelMap(DatabaseExportModel):
     def get_reference_field_val(self, name, field, row):
         if field.mapper.sourcetable not in DATASET:
             field.mapper().importdata()
-            try:
-                objects = field.mapper.destmodel.all_objects.all()
-            except:
-                objects = field.mapper.destmodel.objects.all()
+            objects = field.mapper.destmodel.objects.all()
             dictionary = {}
             for obj in objects:
                 dictionary[obj.pk] = obj
@@ -112,6 +108,8 @@ class BaseModelMap(DatabaseExportModel):
         source_file_path = self.sourcetable + ".csv"
         if datadir != "":
             source_file_path = os.path.join(datadir, source_file_path)
+        else:
+            source_file_path = os.path.join(BACKUP_DIR, source_file_path)
 
         self.export_to_csv()
         df = pd.read_csv(source_file_path)
