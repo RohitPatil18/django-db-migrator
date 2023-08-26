@@ -1,7 +1,4 @@
-from base import DATASET
-
-from .mappers import mappers_list
-
+from .base import DATASET
 
 def import_data(mappers_list):
     print("Import process started...")
@@ -23,6 +20,3 @@ def import_data(mappers_list):
     print("-----------------------------------------")
     print("-----------------------------------------")
     print("Import process completed.")
-
-
-import_data(mappers_list)

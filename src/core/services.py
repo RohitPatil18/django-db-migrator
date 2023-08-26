@@ -13,6 +13,9 @@ class DatabaseExportService:
     def __init__(self, tablename):
         self.tablename = tablename
 
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+
     def get_columns(self, cursor):
         columns = [desc.name for desc in cursor.description]
         return columns

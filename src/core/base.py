@@ -8,9 +8,8 @@ from pandas.core.series import Series
 from . import fields
 from .services import BACKUP_DIR, DatabaseExportService
 
-DATASET = (
-    {}
-)  # Instead of storing data here, prefer another storage option for large data.
+# Instead of storing data here, prefer another storage option for large data.
+DATASET = {}
 
 
 class DatabaseExportModel:
@@ -47,11 +46,12 @@ class BaseModelMap(DatabaseExportModel):
         self._check_required_attributes()
 
     def _check_required_attributes(self) -> None:
-        assert self.destmodel is None, (
+        print(self.destmodel)
+        assert self.destmodel is not None, (
             "'%s' should include a `destmodel` attribute" % self.__class__.__name__
         )
 
-        assert self.sourcetable is None, (
+        assert self.sourcetable is not None, (
             "'%s' should include a `sourcetable` attribute" % self.__class__.__name__
         )
 
