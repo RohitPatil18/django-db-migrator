@@ -2,7 +2,7 @@
 
 The **Django Database Migrator** is a simple utility written to seamlessly import data from one database to another within a Django application.
 
-- **Column Transformations:** Easily manage scenarios where columns have been renamed, merged, or modified in the source database. 
+- **Column Transformations:** Easily manage scenarios where columns have been renamed, merged, or modified from the source database. 
 
 - **Column Removal Handling:** When certain columns are no longer present in the source database, the utility gracefully handles this situation, preventing data loss or integrity issues.
 
@@ -18,7 +18,7 @@ The **Django Database Migrator** is a simple utility written to seamlessly impor
 
 - **Data Transformation:** Apply custom data transformations during the import process, allowing you to modify data as needed before it's integrated into the target database.
 
-- **Relational Handling:** The utility help identifies and manages relationships between tables, maintaining referential integrity in the target database.
+- **Relational Handling:** The utility helps identify and manage relationships between tables, maintaining referential integrity in the target database.
 
 - **Easy Integration:** Designed for seamless integration into existing Django projects.
 
