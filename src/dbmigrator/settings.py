@@ -76,7 +76,7 @@ DATABASES = {
         "PASSWORD": env.str("SOURCE_DATABASE_PASSWORD"),
         "HOST": env.str("SOURCE_DATABASE_HOST"),
         "PORT": env("SOURCE_DATABASE_PORT"),
-    }
+    },
 }
 
 # Password validation
@@ -121,8 +121,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-DB_MIGRATOR = {
-    "SOURCE_DATABASE": {
-        "host": ""
-    }
-}
+DB_MIGRATOR = {"SOURCE_DATABASE": {"host": ""}}

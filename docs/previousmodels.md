@@ -3,16 +3,17 @@ from django.db import models
 
 
 class Technology(models.Model):
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'technology'
+        db_table = 'mst_technology'
 
 
 class Developer(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     technology = models.ForeignKey(Technology, on_delete=models.CASCADE)
+    status = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'developer'
